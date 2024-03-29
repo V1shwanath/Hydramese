@@ -111,6 +111,19 @@ class CnnSiameseNet(BaseSiameseNet):
         multihead_mansim = manhattan_similarity(out5, out6)
         
         
-        average_similarity = tf.reduce_mean(tf.stack([cnn_mansim, rnn_mansim,multihead_mansim]), axis=0)
+        # average_similarity = tf.reduce_mean(tf.stack([cnn_mansim, rnn_mansim,multihead_mansim]), axis=0)
         print("these are the final ouputs for-----------------------------------------------------------------------",cnn_mansim, rnn_mansim, multihead_mansim)
-        return average_similarity
+        
+        # Combine outputs
+        combined_outputs = tf.concat([out1, out2, out3, out4], axis=1)
+
+        # Fully-connected layer 1 with ReLU activation
+        fc1 = tf.layers.dense(combined_outputs, units=6, activation=tf.nn.relu)
+        
+        #add a dropout layer
+        fc2 = tf.layers.dropout(fc1, rate=0.3, training=self.is_training)
+
+        # Fully-connected layer 2 with sigmoid activation for similarity score
+        similarity_score = tf.layers.dense(fc2, units=1, activation=tf.nn.sigmoid)
+
+        return similarity_score
