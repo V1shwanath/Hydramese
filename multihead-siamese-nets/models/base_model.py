@@ -42,8 +42,7 @@ class BaseSiameseNet:
             self.temp_sim = tf.rint(self.predictions)
             self.correct_predictions = tf.equal(self.temp_sim, tf.to_float(self.labels))
             self.accuracy = tf.reduce_mean(tf.to_float(self.correct_predictions))
-
-            self.f1_score = tf.contrib.metrics.f1_score(tf.to_float(self.labels), tf.to_float( self.temp_sim))
+            self.f1_score = tf.contrib.metrics.f1_score(tf.to_float(self.labels), tf.to_float(self.temp_sim))
             
             #print value inside in labels and temp_sim
             
