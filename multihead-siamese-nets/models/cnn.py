@@ -41,7 +41,7 @@ class CnnSiameseNet(BaseSiameseNet):
         num_blocks = model_cfg['PARAMS'].getint('num_blocks')
         num_heads = model_cfg['PARAMS'].getint('num_heads')
         use_residual = model_cfg['PARAMS'].getboolean('use_residual')
-        att_dropout_rate = 0
+        att_dropout_rate = 0.1
         
         # CNN Layers
         print("CNN layers are starting now-------------------------------------------------------------------")
