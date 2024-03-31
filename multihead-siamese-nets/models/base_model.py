@@ -42,8 +42,7 @@ class BaseSiameseNet:
             self.temp_sim = tf.rint(self.predictions)
             self.correct_predictions = tf.equal(self.temp_sim, tf.to_float(self.labels))
             self.accuracy = tf.reduce_mean(tf.to_float(self.correct_predictions))
-
-            self.f1_score = tf.contrib.metrics.f1_score(tf.to_float(self.labels), tf.to_float( self.temp_sim))
+            # self.f1_score = tf.contrib.metrics.f1_score(tf.to_float(self.labels), tf.to_float(self.temp_sim))
             
             #print value inside in labels and temp_sim
             
@@ -51,7 +50,7 @@ class BaseSiameseNet:
         with tf.variable_scope('summary'):
             tf.summary.scalar("loss", self.loss)
             tf.summary.scalar("accuracy", self.accuracy)
-            tf.summary.scalar("f1_score", self.f1_score)
+            # tf.summary.scalar("f1_score", self.f1_score)
             self.summary_op = tf.summary.merge_all()
     
     def siamese_layer(self, sequence_len, model_cfg):

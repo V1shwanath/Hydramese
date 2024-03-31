@@ -41,7 +41,7 @@ class CnnSiameseNet(BaseSiameseNet):
         num_blocks = model_cfg['PARAMS'].getint('num_blocks')
         num_heads = model_cfg['PARAMS'].getint('num_heads')
         use_residual = model_cfg['PARAMS'].getboolean('use_residual')
-        att_dropout_rate = 0
+        att_dropout_rate = 0.1
         
         # CNN Layers
         print("CNN layers are starting now-------------------------------------------------------------------")
@@ -115,7 +115,7 @@ class CnnSiameseNet(BaseSiameseNet):
         print("these are the final ouputs for-----------------------------------------------------------------------",cnn_mansim, rnn_mansim, multihead_mansim)
         
         # Combine outputs
-        combined_outputs = tf.concat([out1, out2, out3, out4], axis=1)
+        combined_outputs = tf.concat([out1, out2, out3, out4, out5, out6], axis=1)
 
         # Fully-connected layer 1 with ReLU activation
         fc1 = tf.layers.dense(combined_outputs, units=6, activation=tf.nn.relu)
