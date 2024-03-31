@@ -115,7 +115,7 @@ class CnnSiameseNet(BaseSiameseNet):
         print("these are the final ouputs for-----------------------------------------------------------------------",cnn_mansim, rnn_mansim, multihead_mansim)
         
         # Combine outputs
-        combined_outputs = tf.concat([out1, out2, out3, out4], axis=1)
+        combined_outputs = tf.concat([out1, out2, out3, out4, out5, out6], axis=1)
 
         # Fully-connected layer 1 with ReLU activation
         fc1 = tf.layers.dense(combined_outputs, units=6, activation=tf.nn.relu)
