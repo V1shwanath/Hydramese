@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m venv .venv
-          source ./.venv/bin/activate
+          ./.venv/bin/activate
           pip install -r requirements/requirements-gpu.txt
 
       - name: Lint
