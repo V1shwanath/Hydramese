@@ -26,8 +26,7 @@ jobs:
           # pip install -r requirements/requirements-gpu.txt
           cd multihead-siamese-nets
       - name: format
-        run: |
-          black *.py
+        run: make format
 
 
       - name: Clean up
