@@ -10,10 +10,9 @@ install:
 
 
 #format all python documents in the project
-test:
+format:
 	black *.py
-	black layers/*.py
-	$(PYTHON) -m pytest
+
 
 
 

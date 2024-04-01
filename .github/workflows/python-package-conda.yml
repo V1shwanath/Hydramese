@@ -25,11 +25,9 @@ jobs:
           .\.venv\Scripts\activate
           # pip install -r requirements/requirements-gpu.txt
 
-      - name: test
-        run: |
-          black *.py
-          black layers/*.py
-          $(PYTHON) -m pytest
+      - name: format
+        run: make format
+
 
       - name: Clean up
         run: make clean
