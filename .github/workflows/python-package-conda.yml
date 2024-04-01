@@ -27,9 +27,9 @@ jobs:
 
       - name: test
         run: |
-          	black *.py
-            black layers/*.py
-            $(PYTHON) -m pytest
+          black *.py
+          black layers/*.py
+          $(PYTHON) -m pytest
 
       - name: Clean up
         run: make clean
