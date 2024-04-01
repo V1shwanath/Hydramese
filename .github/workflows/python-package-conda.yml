@@ -24,9 +24,10 @@ jobs:
           python -m venv .venv
           .\.venv\Scripts\activate
           # pip install -r requirements/requirements-gpu.txt
-
+          cd multihead-siamese-nets
       - name: format
-        run: make format
+        run: |
+          black *.py
 
 
       - name: Clean up
