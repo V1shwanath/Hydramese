@@ -12,6 +12,8 @@ install: venv
 	$(PIP) install -r requirements/requirements-gpu.txt
 
 
+lint:
+	
 #format all python documents in the project
 format:
 	black *.py
