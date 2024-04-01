@@ -4,11 +4,10 @@ PYTHON = ./.venv/Scripts/python
 hello:
 	echo "Hello, world!"
 
-venv:
+
+install:
 	python -m venv .venv
 	.\.venv\Scripts\activate
-
-install: venv
 	$(PIP) install -r requirements/requirements-gpu.txt
 
 
