@@ -23,8 +23,7 @@ jobs:
         run: |
           python -m venv .venv
           .\.venv\Scripts\activate
-          pip install -r requirements/requirements-gpu.txt
-          cd multihead-siamese-nets
+          pip install -r multihead-siamese-nets/requirements/requirements-gpu.txt
 
       - name: format
         run: |
