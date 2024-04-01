@@ -6,17 +6,15 @@ install:
 		. ./.venv/Scripts/activate && \
 		$(PIP) install -r requirements/requirements-gpu.txt
 
-
 lint:
-	
-#format all python documents in the project
+	# linting commands here
+
+test:
+	# test commands here
+
 format:
-	black *.py
-	black layers/*.py
-	$(PYTHON) -m pytest
-
-
+	# formatting commands here
 
 clean:
 	@echo "Cleaning up..."
-	rm -rf .venv 
+	rm -rf .venv
