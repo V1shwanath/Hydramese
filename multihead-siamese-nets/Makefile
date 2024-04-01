@@ -13,8 +13,5 @@ install:
 format:
 	black *.py
 
-
-
-
 clean:
 	rm -rf .venv
