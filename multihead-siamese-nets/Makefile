@@ -10,7 +10,8 @@ install:
 
 
 lint:
-	
+	@echo "Linting the code..."
+
 #format all python documents in the project
 format:
 	black *.py
