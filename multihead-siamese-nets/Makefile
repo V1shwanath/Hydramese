@@ -18,5 +18,4 @@ test:
 
 
 clean:
-	@echo "Cleaning up..."
-	rm -rf .venv 
+	rm -rf .venv
