@@ -1,21 +1,24 @@
 PIP = ./.venv/Scripts/pip
 PYTHON = ./.venv/Scripts/python
 
-# install:
-# 	python -m venv .venv && \
-# 		. ./.venv/Scripts/activate && \
-# 		$(PIP) install -r requirements/requirements-gpu.txt
+
+
+install:
+	python -m venv .venv
+	.\.venv\Scripts\activate
+	$(PIP) install -r requirements/requirements-gpu.txt
+
 
 lint:
-	@echo "Linting..."
-	# linting commands here
-
-test:
-	# test commands here
-
+	
+#format all python documents in the project
 format:
-	# formatting commands here
+	black *.py
+	black layers/*.py
+	$(PYTHON) -m pytest
+
+
 
 clean:
 	@echo "Cleaning up..."
-	rm -rf .venv
+	rm -rf .venv 
