@@ -7,6 +7,7 @@ PYTHON = ./.venv/Scripts/python
 # 		$(PIP) install -r requirements/requirements-gpu.txt
 
 lint:
+	@echo "Linting..."
 	# linting commands here
 
 test:
