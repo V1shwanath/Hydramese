@@ -25,14 +25,8 @@ jobs:
           .\.venv\Scripts\activate
           # pip install -r requirements/requirements-gpu.txt
 
-      - name: Lint
-        run: make lint
-
       - name: Test
         run: make test
-
-      - name: Format code
-        run: make format
 
       - name: Clean up
         run: make clean

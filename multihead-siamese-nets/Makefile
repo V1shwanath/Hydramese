@@ -9,11 +9,8 @@ install:
 	$(PIP) install -r requirements/requirements-gpu.txt
 
 
-lint:
-	@echo "Linting the code..."
-
 #format all python documents in the project
-format:
+test:
 	black *.py
 	black layers/*.py
 	$(PYTHON) -m pytest
