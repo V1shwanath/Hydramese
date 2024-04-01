@@ -1,10 +1,10 @@
 PIP = ./.venv/Scripts/pip
 PYTHON = ./.venv/Scripts/python
 
-install:
-	python -m venv .venv && \
-		. ./.venv/Scripts/activate && \
-		$(PIP) install -r requirements/requirements-gpu.txt
+# install:
+# 	python -m venv .venv && \
+# 		. ./.venv/Scripts/activate && \
+# 		$(PIP) install -r requirements/requirements-gpu.txt
 
 lint:
 	# linting commands here
