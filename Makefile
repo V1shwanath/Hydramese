@@ -10,7 +10,7 @@ install:
 
 #format all python documents in the project
 format:
-	black *.py
+	$(PYTHON) -m black *.py
 
 clean:
 	rm -rf .venv
