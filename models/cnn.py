@@ -118,7 +118,7 @@ class CnnSiameseNet(BaseSiameseNet):
         combined_outputs = tf.concat([out1, out2, out3, out4, out5, out6], axis=1)
 
         # Fully-connected layer 1 with ReLU activation
-        fc1 = tf.layers.dense(combined_outputs, units=6, activation=tf.nn.relu)
+        fc1 = tf.layers.dense(combined_outputs, units=4, activation=tf.nn.relu)
         
         #add a dropout layer
         fc2 = tf.layers.dropout(fc1, rate=0.3, training=self.is_training)
